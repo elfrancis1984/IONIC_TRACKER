@@ -16,7 +16,7 @@ import { HomePage } from "../home/home";
 })
 export class LoginPage implements AfterViewInit {
    @ViewChild(Slides) slides: Slides;
-   clave:string = "fco-1";
+   clave:string = "";
 
   constructor(public navCtrl: NavController,
               private _up: UsuarioProvider,
