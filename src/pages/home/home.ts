@@ -26,7 +26,7 @@ export class HomePage {
         this.usuario = data;
       });
 
-      if(platform.is("cordova")){
+      if(this.platform.is("cordova")){
         this.insomnia.keepAwake()
         .then(
           () => console.log('success'),
@@ -39,6 +39,14 @@ export class HomePage {
     this._usuario.borrar_usuario();
     this._ubicacion.detener_watch();
     this.navCtrl.setRoot(LoginPage);
+
+    if(this.platform.is("cordova")){
+      this.insomnia.allowSleepAgain()
+      .then(
+        () => console.log('success'),
+        () => console.log('error')
+      );
+    }
   }
 
 }
